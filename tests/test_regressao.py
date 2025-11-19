@@ -23,4 +23,4 @@ def test_regressao_divisao(client):
 def test_regressao_divisao_por_zero(client):
     resp = client.post('/divisao/', data=json.dumps({'a': 6, 'b': 0}), content_type='application/json')
     assert resp.status_code == 400
-    assert resp.json()['erro'] == 'Divisão por zero não é permitida'
+    assert resp.json()['error'] == 'Divisão por zero não é permitida'
